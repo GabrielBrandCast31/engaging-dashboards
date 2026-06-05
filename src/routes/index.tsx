@@ -11,10 +11,10 @@ import { DollarSign, Target, TrendingUp, Wallet } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vantage — Performance de Campanhas" },
-      { name: "description", content: "Dashboard de performance de campanhas: custo, CPR, orçamento e estratégia." },
-      { property: "og:title", content: "Vantage — Performance de Campanhas" },
-      { property: "og:description", content: "Dashboard interativo de marketing performance." },
+      { title: "Brandcast — Performance de Campanhas" },
+      { name: "description", content: "Painel de performance de campanhas: custo, CPR, orçamento e estratégia." },
+      { property: "og:title", content: "Brandcast — Performance de Campanhas" },
+      { property: "og:description", content: "Painel interativo de marketing de performance." },
     ],
   }),
   component: Index,
@@ -31,9 +31,9 @@ function Index() {
       <main className="p-6 lg:ml-64 lg:p-8">
         <header className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Performance Hub</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Central de Performance</h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              Acompanhando 14 campanhas ativas em Meta, Google e TikTok
+              Acompanhando 14 campanhas ativas no Meta, Google e TikTok
             </p>
           </div>
 
@@ -61,7 +61,7 @@ function Index() {
           />
           <KpiCard
             label="CPR Médio"
-            value={`$${k.cpr.toFixed(2)}`}
+            value={fmtMoney(k.cpr)}
             delta={{ value: `${k.cprDelta > 0 ? "+" : ""}${k.cprDelta}%`, positive: k.cprDelta < 0 }}
             icon={Target}
           />
@@ -85,13 +85,13 @@ function Index() {
               <div>
                 <h3 className="font-semibold">Evolução de Custo</h3>
                 <p className="mt-0.5 text-xs text-muted-foreground">
-                  Gasto diário vs conversões — passe o mouse para detalhes
+                  Investimento diário vs conversões — passe o mouse para detalhes
                 </p>
               </div>
               <div className="flex gap-4">
                 <div className="flex items-center gap-2">
                   <div className="size-2 rounded-full bg-primary" />
-                  <span className="text-xs text-muted-foreground">Gasto</span>
+                  <span className="text-xs text-muted-foreground">Investimento</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="size-2 rounded-full bg-success" />
@@ -104,7 +104,7 @@ function Index() {
 
           <section className="rounded-2xl border border-border bg-card p-6">
             <div className="mb-6">
-              <h3 className="font-semibold">Top Canais por ROI</h3>
+              <h3 className="font-semibold">Canais por ROAS</h3>
               <p className="mt-0.5 text-xs text-muted-foreground">Retorno por real investido</p>
             </div>
             <ChannelsChart />
