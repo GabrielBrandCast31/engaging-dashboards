@@ -52,8 +52,8 @@ export function CostChart({ data }: { data: Point[] }) {
             labelStyle={{ color: "oklch(0.985 0 0)", fontWeight: 600 }}
             formatter={(value: number, name) =>
               name === "spend"
-                ? [`$${value.toLocaleString()}`, "Gasto"]
-                : [value.toLocaleString(), "Conversões"]
+                ? [value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }), "Investimento"]
+                : [value.toLocaleString("pt-BR"), "Conversões"]
             }
           />
           <Area
