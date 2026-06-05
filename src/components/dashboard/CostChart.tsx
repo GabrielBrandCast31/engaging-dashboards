@@ -38,7 +38,7 @@ export function CostChart({ data }: { data: Point[] }) {
             fontSize={10}
             tickLine={false}
             axisLine={false}
-            tickFormatter={(v) => `$${(v / 1000).toFixed(1)}k`}
+            tickFormatter={(v) => `R$${(v / 1000).toFixed(1)}k`}
           />
           <Tooltip
             cursor={{ stroke: "oklch(0.62 0.21 280)", strokeWidth: 1, strokeDasharray: "4 4" }}
