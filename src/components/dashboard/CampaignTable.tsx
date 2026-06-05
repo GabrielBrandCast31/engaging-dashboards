@@ -2,14 +2,14 @@ import { campaigns, fmtMoney, type CampaignRow } from "./data";
 
 function StatusBadge({ status }: { status: CampaignRow["status"] }) {
   const map = {
-    Active: "bg-success/10 text-success",
-    Learning: "bg-primary/10 text-primary",
-    Paused: "bg-white/5 text-muted-foreground",
+    Ativa: "bg-success/10 text-success",
+    Aprendizado: "bg-primary/10 text-primary",
+    Pausada: "bg-white/5 text-muted-foreground",
   } as const;
   const dot = {
-    Active: "bg-success",
-    Learning: "bg-primary",
-    Paused: "bg-muted-foreground",
+    Ativa: "bg-success",
+    Aprendizado: "bg-primary",
+    Pausada: "bg-muted-foreground",
   } as const;
   return (
     <span
