@@ -40,7 +40,7 @@ export function CampaignTable() {
               <th className="px-6 py-4 font-medium">Campanha</th>
               <th className="px-6 py-4 font-medium">Status</th>
               <th className="px-6 py-4 font-medium">Estratégia</th>
-              <th className="px-6 py-4 text-right font-medium">Gasto</th>
+              <th className="px-6 py-4 text-right font-medium">Investimento</th>
               <th className="px-6 py-4 text-right font-medium">CPR</th>
               <th className="px-6 py-4 text-right font-medium">ROAS</th>
             </tr>
@@ -54,7 +54,7 @@ export function CampaignTable() {
                 </td>
                 <td className="px-6 py-4 text-sm text-muted-foreground">{c.strategy}</td>
                 <td className="px-6 py-4 text-right font-mono tabular-nums">{fmtMoney(c.spend)}</td>
-                <td className="px-6 py-4 text-right font-mono tabular-nums">${c.cpr.toFixed(2)}</td>
+                <td className="px-6 py-4 text-right font-mono tabular-nums">{fmtMoney(c.cpr)}</td>
                 <td
                   className={`px-6 py-4 text-right font-mono tabular-nums ${
                     c.roas >= 3 ? "text-success" : c.roas >= 2 ? "" : "text-destructive"
