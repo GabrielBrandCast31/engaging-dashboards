@@ -23,13 +23,7 @@ export function KpiCard({ label, value, delta, progress, icon: Icon }: Props) {
       </div>
       {delta && (
         <div
-          className={`mt-4 flex items-center gap-2 text-xs ${
-            delta.neutral
-              ? "text-muted-foreground"
-              : delta.positive
-              ? "text-[oklch(var(--success))] text-success"
-              : "text-destructive"
-          }`}
+          className="mt-4 flex items-center gap-2 text-xs text-muted-foreground"
         >
           <span
             className={`rounded px-1.5 py-0.5 ${
