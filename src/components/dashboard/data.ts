@@ -3,7 +3,7 @@ export type Period = "7d" | "30d" | "q1";
 export const periodLabels: Record<Period, string> = {
   "7d": "Últimos 7 dias",
   "30d": "Últimos 30 dias",
-  q1: "Q1 2024",
+  q1: "1º Trimestre",
 };
 
 // KPI values per period
@@ -36,15 +36,15 @@ export const costSeries: Record<Period, { day: string; spend: number; conv: numb
 };
 
 export const channels = [
-  { name: "Meta Advantage+", roas: 6.4, spend: 18200 },
-  { name: "Google PMax", roas: 5.1, spend: 14800 },
-  { name: "TikTok Spark", roas: 4.8, spend: 6200 },
-  { name: "YouTube Shorts", roas: 3.2, spend: 3640 },
+  { name: "Meta Ads", roas: 6.4, spend: 18200 },
+  { name: "Google Ads", roas: 5.1, spend: 14800 },
+  { name: "TikTok Ads", roas: 4.8, spend: 6200 },
+  { name: "YouTube Ads", roas: 3.2, spend: 3640 },
 ];
 
 export type CampaignRow = {
   name: string;
-  status: "Active" | "Paused" | "Learning";
+  status: "Ativa" | "Pausada" | "Aprendizado";
   strategy: string;
   spend: number;
   cpr: number;
@@ -52,13 +52,13 @@ export type CampaignRow = {
 };
 
 export const campaigns: CampaignRow[] = [
-  { name: "Spring_24_Scale_Core", status: "Active", strategy: "Bid Cap / LAL 1%", spend: 12450, cpr: 3.12, roas: 7.2 },
-  { name: "Retargeting_DABA_HighIntent", status: "Active", strategy: "Lowest Cost / Catalog", spend: 4200.5, cpr: 5.8, roas: 12.4 },
-  { name: "Prospecting_Video_V1_Testing", status: "Paused", strategy: "CBO / Broad Targeting", spend: 1120, cpr: 8.45, roas: 1.2 },
-  { name: "Search_Brand_Keywords_Global", status: "Active", strategy: "Target CPA / Keyword", spend: 8900.22, cpr: 2.04, roas: 5.5 },
-  { name: "Pmax_NewCustomer_LATAM", status: "Learning", strategy: "Max Conversion Value", spend: 5320.4, cpr: 6.12, roas: 3.4 },
-  { name: "TikTok_Spark_UGC_Wave2", status: "Active", strategy: "Lowest Cost", spend: 3210.0, cpr: 4.9, roas: 4.8 },
+  { name: "Escala_Verão_Core", status: "Ativa", strategy: "Limite de Lance / LAL 1%", spend: 12450, cpr: 3.12, roas: 7.2 },
+  { name: "Remarketing_Alta_Intenção", status: "Ativa", strategy: "Menor Custo / Catálogo", spend: 4200.5, cpr: 5.8, roas: 12.4 },
+  { name: "Prospecção_Vídeo_Teste", status: "Pausada", strategy: "CBO / Público Amplo", spend: 1120, cpr: 8.45, roas: 1.2 },
+  { name: "Busca_Marca_Brasil", status: "Ativa", strategy: "CPA Alvo / Palavra-chave", spend: 8900.22, cpr: 2.04, roas: 5.5 },
+  { name: "Pmax_Novos_Clientes_LATAM", status: "Aprendizado", strategy: "Máx. Valor de Conversão", spend: 5320.4, cpr: 6.12, roas: 3.4 },
+  { name: "TikTok_UGC_Onda2", status: "Ativa", strategy: "Menor Custo", spend: 3210.0, cpr: 4.9, roas: 4.8 },
 ];
 
 export const fmtMoney = (n: number) =>
-  `$${n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });

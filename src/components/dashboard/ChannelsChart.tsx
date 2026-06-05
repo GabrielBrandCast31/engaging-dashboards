@@ -21,7 +21,7 @@ export function ChannelsChart() {
               />
             </div>
             <div className="mt-1 text-[10px] font-mono uppercase tracking-widest text-muted-foreground/70">
-              Spend ${c.spend.toLocaleString()}
+              Investimento {c.spend.toLocaleString("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 })}
             </div>
           </div>
         );
